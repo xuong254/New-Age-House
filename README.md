@@ -3,8 +3,8 @@
 <div align="center">
 
 <p align="center">
-  <img src="image\logoDaiNam.png" alt="DaiNam University Logo" width="200"/>
-  <img src="image\LogoAIoTLab.png" alt="AIoTLab Logo" width="170"/>
+  <img src="logoDaiNam (1).png" alt="DaiNam University Logo" width="200"/>
+  <img src="LogoAIoTLab (1).png" alt="AIoTLab Logo" width="170"/>
 </p>
 
 [![Made by AIoTLab](https://img.shields.io/badge/Made%20by%20AIoTLab-blue?style=for-the-badge)](https://www.facebook.com/DNUAIoTLab)
@@ -26,23 +26,25 @@
 
 ## ⚙ Hệ thống
 <p align="center">
-  <img src="image\hethong.png" alt="System Architecture" width="800"/>
+  <img src="hethong.jpg" alt="System Architecture" width="800"/>
 </p>
 
 ---
 ## 📂 Cấu trúc dự án
 
-📦 Project 
-├── 📂arduino
-| ├──esp32.ino       # Mã nguồn Arduino điều khiển các thiết bị
-├── 📂 data 
-│    ├── 📂 data_face            # Chứa dữ liệu khuôn mặt.
-|    ├── 📂 unknown_faces      # Chứa dữ liệu khuôn mặt người lạ
-├── esp32_control.py            # Điều khiển ESP32
-├── face_recognition_module.py  # Module nhận diện khuôn mặt
-├── main.py                     #  Tệp chính chạy chương trình.
-├── notification_module.py      # Quản lý thông báo.
-├── voice_control_module.py  # Điều khiển bằng giọng nói.
+📦 Project
+
+├── 📂bat_tat den ID
+
+| ├──bat_tat_den_ID.ino     # Mã nguồn Arduino điều khiển các thiết bị.
+| ├──huanluyen.py     # Huấn luyện id.
+| ├──python face_voice_control.py   #  Nhận diện khuôn mặt.
+| ├──voice_control.py    # Điều khiển bằng giọng nói.
+
+├── cambienkhigass.rar
+├── cambienmua.rar
+├── cambientialua.rar
+├── HongNgoai.rar
 
 ---
 ## 💻 Công nghệ sử dụng 
@@ -51,24 +53,52 @@
 
 | **PHẦN CỨNG** | **SỬ DỤNG** |
 |---------------------|-------------|
-| ESP32             | Nhận tín hiệu điều khiển các thiết bị |
-| DFPlayer          | Loa         |
+| Arduini           | Nhận tín hiệu điều khiển các thiết bị |
+| Flame Sensor         | Cảm biến tia lửa         |
+|  FM-20B         | Còi báo      |
+|   LCD 1604       | Màn hình    |
+|  PIR HC-SR501        | Cảm Biến Thân Nhiệt Chuyển Động      |
+| relay 12VDC         | Cảm biến mưa       |
 | Động cơ servo     | Động cơ điều khiển cửa |
-| Relay Module      | Điều khiển quạt |
-| Đèn Led, Quạt        |                 |
+| Metan MQ-4     | Cảm biến khí gas |
+| Đèn Led       |           bật đèn cửa ra vào và bật đèn hệ thống trong nhà      |
 
 ### Phần mềm
 | **PHẦN MỀM** | **SỬ DỤNG** |
 |---------------------|-------------|
 | PYTHON
-| PUSHOVER| App nhận cảnh báo người lạ|
 | Arduino IDE| Để nạp file .ino|
 
 ###  Các thư viện Python cần thiết
 Cài đặt các thư viện cần thiết:
 
     pip install opencv-python face-recognition SpeechRecognition
+---
+## 🧮 Bảng mạch
 
+### 🔩 Kết nối phần cứng:
+- bat_tat den ID
+<img src="arduno_giongnoi.jpg" alt="System Architecture" width="300"/>
+- cambienkhigass.rar
+<img src="ard_khigas.jpg" alt="System Architecture" width="300"/>
+- cambienmua.rar
+<img src="mua.jpg" alt="System Architecture" width="300"/>
+- cambientialua.rar
+<img src="tialua.jpg" alt="System Architecture" width="300"/>
+- HongNgoai.rar
+<img src="hongngoai.jpg" alt="System Architecture" width="300"/>
+
+### ⛓️‍💥 Hướng dẫn cắm dây
+- bat_tat den ID
+<img src="banggiongnoi.jpg" alt="System Architecture" width="800"/>
+- cambienkhigass.rar
+<img src="bangkhigas.jpg" alt="System Architecture" width="800"/>
+- cambienmua.rar
+<img src="bangmua.jpg" alt="System Architecture" width="800"/>
+- cambientialua.rar
+<img src="bangtialua.jpg" alt="System Architecture" width="800"/>
+- HongNgoai.rar
+<img src="banghongngoai.jpg" alt="System Architecture" width="800"/>
 ---
 ## 🖇 Hướng dẫn cài đặt và chạy
 1️⃣ Chuẩn bị phần cứng: Nạp arduino
