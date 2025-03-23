@@ -19,6 +19,7 @@
 
 - Nhận diện khuôn mặt: Dùng OpenCV và Face Recognition để quét, mã hóa và so sánh khuôn mặt. Nếu trùng khớp, cho phép điều khiển thiết bị. Nếu không, sẽ không điều khiển được thiết bị.
 - Nhận diện giọng nói: Dùng Speech Recognition để chuyển giọng nói thành văn bản, kiểm tra lệnh và gửi tín hiệu điều khiển qua Arduino.
+- Sử dụng các cảm biến: Cảm biến mưa - đóng cửa sổ trời. Cảm biến hồng ngoại - bật/ tắt đèn và mở cửa ra vào. Cảm biến khí gas -  tia lửa
 - Kết nối IoT:Arduino để sử dụng các cảm biến: khí gas, tia lửa, mưa, hồng ngoại.
 
 ---
