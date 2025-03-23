@@ -100,62 +100,112 @@ Cài đặt các thư viện cần thiết:
 - HongNgoai.rar
 <img src="banghongngoai.jpg" alt="System Architecture" width="800"/>
 ---
-## 🖇 Hướng dẫn cài đặt và chạy
-1️⃣ Chuẩn bị phần cứng: Nạp arduino
-- Mở file esp32.ino bằng Arduino IDE.
-- Kết nối board Arduino với máy tính.
-- Nạp (upload) mã nguồn lên board.
-- Mở Serial Monitor hiện ESP32_IP 
+##🛠 Hướng Dẫn Cài Đặt Và Chạy
 
-2️⃣ Cài đặt PushOver
+1️⃣ Cài Đặt Môi Trường
+Cài đặt Python và thư viện cần thiết:
+Yêu cầu: Python 3.8 trở lên
 
-- Tải App PushOver và đăng nhập trên điện thoại(Androi/IOS)
-- Vào https://pushover.net/ đăng nhập 
-- Tạo Create an Application/API Token để lấy 'Your User Key' và 'API Token/Key'
+Cài đặt các thư viện cần thiết (chạy lệnh sau trong terminal/cmd):
 
-3️⃣ Chạy chương trình
+        pip install opencv-python face-recognition SpeechRecognition pyserial
 
-- Lấy địa chỉ IP ở Arduino IDE vào chương trình `esp32_control.py` 
-- Lấy User Key và API Token/Key ở PushOver vào chương trình `notification_module.py`
-- Chạy chương trình `main.py`
 
-### 📑 Hướng dẫn sử dụng
-1️⃣ Nhận diện khuôn mặt
+Cài đặt Arduino IDE:
+Tải và cài đặt Arduino IDE từ Arduino
 
-- Khi người dùng chạy chương trình camera quét khuôn mặt trong phạm vi giám sát.
-- So sánh khuôn mặt hiện tại vs khuôn mặt đã lưu
-    
-    - ✅ Đúng với khuôn mặt → Có thể điều khiển được các thiết bị bằng giọng nói.
-    - ❌ Khuôn mặt không khớp → Chụp, lưu dữ liệu vào `unknown_faces` và thông báo đến điện thoại qua App PushOver.
+Cài đặt thư viện cho Arduino:
 
-2️⃣ Nhận giọng nói điều khiển thiết bị trong nhà
+Mở Arduino IDE
 
-- Sử dụng các câu lệnh điều khiển các thiết bị
-   
-   - Quạt: 'bật quạt', 'tắt quạt'.
-   - Đèn: 'bật đèn phòng ngủ', 'tắt đèn phòng ngủ','bật đèn phòng khách', 'tắt đèn phòng khách'.
-   - Cửa sổ: 'mở cửa sổ', 'đóng cửa sổ'
-   - Loa: 'mở nhạc', 'tắt nhạc'.
+Vào Sketch > Include Library > Manage Libraries
 
-3️⃣ Xem thông báo cảnh báo người lạ
+Tìm và cài đặt các thư viện cần thiết:
 
-- Qua App PushOver xem được ảnh chụp người lạ kèm ngày tháng.
-- Ảnh sẽ được lưu vào data/unknown_faces kèm thời gian.
+Servo (điều khiển cửa)
+
+LiquidCrystal_I2C (hiển thị trên màn hình LCD)
+
+SoftwareSerial (giao tiếp với module khác)
+
+
+
+2️⃣ Kết nối phần cứng
+
+Kết nối các cảm biến với Arduino:
+Cảm biến khí gas (MQ-4) → Báo động khi phát hiện khí gas
+
+Cảm biến mưa → Tự động đóng cửa sổ khi trời mưa
+
+Cảm biến hồng ngoại (PIR HC-SR501) → Phát hiện chuyển động để bật/tắt đèn
+
+Cảm biến tia lửa (Flame Sensor) → Phát hiện cháy để kích hoạt báo động
+
+Động cơ servo → Mở/đóng cửa khi có nhận diện khuôn mặt
+
+Loa báo động (FM-20B) → Còi báo khi có nguy hiểm
+
+Màn hình LCD 1604 → Hiển thị trạng thái hệ thống
+
+3️⃣ Chạy hệ thống
+
+📌 3.1 Chạy Mã Nguồn Arduino
+Mở Arduino IDE
+
+Kết nối Arduino với máy tính qua cổng USB
+
+Mở file bat_tat_den_ID.ino
+
+Chọn Board: Arduino Uno (hoặc board phù hợp)
+
+Chọn Cổng COM (tương ứng với Arduino)
+
+Nhấn Upload để nạp code lên Arduino
+
+📌 3.2 Chạy Nhận Diện Khuôn Mặt
+1. Mở terminal/cmd trong thư mục chứa mã nguồn
+
+2. Chạy lệnh sau để huấn luyện khuôn mặt:
+  - Ví dụ:
+
+        python huanluyen.py
+      
+3. Sau khi huấn luyện thành công, chạy nhận diện khuôn mặt:
+ - Ví dụ:
+
+        python face_voice_control.py
+
+      
+📌 3.3 Chạy Điều Khiển Giọng Nói
+Đảm bảo micro hoạt động bình thường
+
+Chạy lệnh sau:
+ - Ví dụ:
+
+        python voice_control.py
+
+
+
+Nói các lệnh điều khiển như:
+
+"Bật đèn "
+
 
 --- 
 ## 📰 Poster
 
 <p align="center">
-  <img src="\image\Poster_CNTT06_NHOM9.png" alt="System Architecture" width="800"/>
+  <img src="Slide1.JPG" alt="System Architecture" width="800"/>
 </p>
 
 ---
 ## 🤝 Đóng góp
 Các thành viên nhóm
 
-- Nguyễn Thu Anh
-- Nguyễn Thị Khuyên
-- Hà Duy Dương
-- Đỗ Văn Thuyên
+- Bùi Thị Ngọc Xương
+- Phạm Văn Đạt
+- Triệu Vũ Hà My
+- Nguyễn Thành Phong
 
-© 2025 NHÓM 9, CNTT16-06, TRƯỜNG ĐẠI HỌC ĐẠI NAM
+
+© 2025 NHÓM 5, CNTT16-06, TRƯỜNG ĐẠI HỌC ĐẠI NAM
